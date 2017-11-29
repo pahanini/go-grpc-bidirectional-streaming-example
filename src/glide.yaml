@@ -1,0 +1,10 @@
+package: .
+ignore:
+ - proto
+import:
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: google.golang.org/grpc
+  version: ^1.8.0
+- package: proto
