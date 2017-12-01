@@ -30,6 +30,8 @@ func (s server) Max(srv pb.Math_MaxServer) error {
 		// receive data from stream
 		req, err := srv.Recv()
 		if err == io.EOF {
+			// return will close seream from server side
+			log.Println("exit")
 			return nil
 		}
 		if err != nil {
@@ -37,7 +39,7 @@ func (s server) Max(srv pb.Math_MaxServer) error {
 			continue
 		}
 
-		// continue if numner reveived from stream
+		// continue if number reveived from stream
 		// less than max
 		if req.Num <= max {
 			continue
