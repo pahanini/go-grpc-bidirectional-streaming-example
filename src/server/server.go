@@ -30,7 +30,7 @@ func (s server) Max(srv pb.Math_MaxServer) error {
 		// receive data from stream
 		req, err := srv.Recv()
 		if err == io.EOF {
-			// return will close seream from server side
+			// return will close stream from server side
 			log.Println("exit")
 			return nil
 		}

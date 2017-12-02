@@ -32,7 +32,7 @@ func main() {
 	done := make(chan bool)
 
 	// first goroutine sends random increasing numbers to stream
-	// and closes int alter 10 iterations
+	// and closes int after 10 iterations
 	go func() {
 		for i := 1; i <= 10; i++ {
 			// generate random nummber and send it to stream
