@@ -5,7 +5,9 @@ import (
 	"io"
 	"log"
 	"math/rand"
-	pb "proto"
+
+	pb "github.com/pahanini/go-grpc-bidirectional-streaming-example/src/proto"
+
 	"time"
 
 	"google.golang.org/grpc"

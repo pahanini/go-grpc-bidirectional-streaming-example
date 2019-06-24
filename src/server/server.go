@@ -4,7 +4,8 @@ import (
 	"io"
 	"log"
 	"net"
-	pb "proto"
+
+	pb "github.com/pahanini/go-grpc-bidirectional-streaming-example/src/proto"
 
 	"google.golang.org/grpc"
 )
