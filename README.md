@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- go 1.9
+- go 1.12
 - protobuf installed
 - go support for protobuf installed
 
