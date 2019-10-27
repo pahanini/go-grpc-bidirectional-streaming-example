@@ -7,7 +7,6 @@
 ## Requirements
 
 - go 1.9
-- glide installed
 - protobuf installed
 - go support for protobuf installed
 
@@ -17,7 +16,6 @@
 
 ```bash
 brew install go
-brew install glide
 brew install protobuf
 go get -u github.com/golang/protobuf/protoc-gen-go
 ```
