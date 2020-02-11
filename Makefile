@@ -1,10 +1,6 @@
 
 all: client server
 
-dep:
-	@echo "Install dependencies"
-	cd src && glide install
-
 protoc:
 	@echo "Generating Go files"
 	cd src/proto && protoc --go_out=plugins=grpc:. *.proto
@@ -23,4 +19,4 @@ clean:
 	go clean github.com/pahanini/go-grpc-bidirectional-streaming-example/...
 	rm -f server client
 
-.PHONY: client server protoc dep
+.PHONY: client server protoc

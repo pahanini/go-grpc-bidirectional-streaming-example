@@ -29,7 +29,6 @@ TBD
 ## Complie
 
 ```bash
-make dep
 make all
 ```
 
