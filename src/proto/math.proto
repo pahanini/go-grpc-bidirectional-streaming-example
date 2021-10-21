@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package protobuf;
 
+option go_package="github.com/pahanini/go-grpc-bidirectional-streaming-example/proto";
+
 service Math {
   rpc Max (stream Request) returns (stream Response) {}
 }

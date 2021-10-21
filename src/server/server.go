@@ -10,7 +10,9 @@ import (
 	"google.golang.org/grpc"
 )
 
-type server struct{}
+type server struct {
+	pb.UnimplementedMathServer
+}
 
 func (s server) Max(srv pb.Math_MaxServer) error {
 
@@ -57,7 +59,7 @@ func (s server) Max(srv pb.Math_MaxServer) error {
 }
 
 func main() {
-	// create listiner
+	// create listener
 	lis, err := net.Listen("tcp", ":50005")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
@@ -65,7 +67,7 @@ func main() {
 
 	// create grpc server
 	s := grpc.NewServer()
-	pb.RegisterMathServer(s, server{})
+	pb.RegisterMathServer(s, &server{})
 
 	// and start...
 	if err := s.Serve(lis); err != nil {

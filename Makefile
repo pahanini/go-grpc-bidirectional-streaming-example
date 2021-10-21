@@ -3,7 +3,8 @@ all: client server
 
 protoc:
 	@echo "Generating Go files"
-	cd src/proto && protoc --go_out=plugins=grpc:. *.proto
+	cd src/proto && protoc --go_out=. --go-grpc_out=. \
+		--go-grpc_opt=paths=source_relative --go_opt=paths=source_relative *.proto
 
 server: protoc
 	@echo "Building server"

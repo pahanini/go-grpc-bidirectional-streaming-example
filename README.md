@@ -2,11 +2,11 @@
 
 - client sends random numbers to server
 - server receives number and sends it back if the number greater than all previous numbers
-- both client and serever handle context errors (try to close client during send)
+- both client and server handle context errors (try to close client during send)
 
 ## Requirements
 
-- go 1.12
+- go 1.17.1
 - protobuf installed
 - go support for protobuf installed
 
@@ -17,10 +17,15 @@
 ```bash
 brew install go
 brew install protobuf
-go get -u github.com/golang/protobuf/protoc-gen-go
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
 ```
 
 Make sure ```protoc-gen-go``` added in PATH
+
+To add it to PATH you can use bash profile for example.
+
+Edit ```vim ~/.bash_profile```, add: ```export PATH="$PATH:$(go env GOPATH)/bin"```, run ```source ~/.bash_profile``` 
+to apply changes.
 
 ### Linux
 
