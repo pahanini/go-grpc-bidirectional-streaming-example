@@ -34,10 +34,10 @@ func main() {
 	done := make(chan bool)
 
 	// first goroutine sends random increasing numbers to stream
-	// and closes int after 10 iterations
+	// and closes it after 10 iterations
 	go func() {
 		for i := 1; i <= 10; i++ {
-			// generate random nummber and send it to stream
+			// generates random number and sends it to stream
 			rnd := int32(rand.Intn(i))
 			req := pb.Request{Num: rnd}
 			if err := stream.Send(&req); err != nil {
